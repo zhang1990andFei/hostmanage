@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@color/colorwrite"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/grid_width"
+        android:layout_width="300dp"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <TextView
+            android:id="@+id/docotor_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:text="姓名" />
+
+        <TextView
+            android:id="@+id/docotor_nametext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/docotor_name"
+            android:padding="5dp"
+            android:text="伏龙" />
+
+        <TextView
+            android:id="@+id/docotor_age"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/docotor_name"
+            android:padding="5dp"
+            android:text="年龄" />
+
+        <TextView
+            android:id="@+id/docotor_agetext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/docotor_nametext"
+            android:layout_toRightOf="@+id/docotor_age"
+            android:padding="5dp"
+            android:text="25" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/circle_greentext"
+            android:gravity="center"
+            android:text="护师" />
+    </RelativeLayout>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_margin="2dp"
+        android:background="@drawable/dash" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="主要负责床位:"
+            android:layout_marginLeft="5dp"
+            android:textColor="@color/black" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_margin="2dp"
+                android:background="@drawable/circle_green"
+                android:text="1床"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_margin="2dp"
+                android:background="@drawable/circle_green"
+                android:text="2床"/>
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>
