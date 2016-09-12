@@ -4,6 +4,7 @@
     android:layout_height="match_parent"
     android:background="#CCCCCC"
     android:orientation="vertical">
+
     <TextView
         android:layout_width="100dp"
         android:layout_height="50dp"
@@ -11,12 +12,28 @@
         android:padding="5dp"
         android:text="普外三病区"
         android:textColor="#000000" />
-    <GridView
-        android:id="@+id/nurseview_gridview"
+
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:horizontalSpacing="10dp"
-        android:numColumns="3"
-        android:stretchMode="columnWidth"
-        android:verticalSpacing="10dp"></GridView>
+        android:orientation="horizontal">
+
+        <com.jeremyfeinstein.slidingmenu.lib.SlidingMenu xmlns:sliding="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/slidingmenulayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#ffffff"
+            sliding:behindOffset="300dp"
+            sliding:behindScrollScale="1"
+            sliding:fadeDegree="0.3"
+            sliding:fadeEnabled="true"
+            sliding:touchModeAbove="fullscreen"
+            sliding:viewAbove="@layout/leftmenu" />
+
+        <include
+            android:id="@+id/left_layout"
+            layout="@layout/ward_detail"/>
+    </LinearLayout>
+
 </LinearLayout>

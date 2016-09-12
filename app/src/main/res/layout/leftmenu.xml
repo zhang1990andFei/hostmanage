@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:gravity="center"
+        android:text="Hello Sliding Menu!" />
+
+    <com.jeremyfeinstein.slidingmenu.lib.SlidingMenu xmlns:sliding="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/_slid_slidingmenulayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#ff0000"
+        sliding:behindOffset="300dp"
+        sliding:behindScrollScale="1"
+        sliding:fadeDegree="0.3"
+        sliding:fadeEnabled="true"
+        sliding:touchModeAbove="fullscreen"
+        sliding:viewAbove="@layout/device_fragment" />
+
+    <GridView
+        android:id="@+id/nurseview_gridview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:horizontalSpacing="10dp"
+        android:numColumns="3"
+        android:stretchMode="columnWidth"
+        android:verticalSpacing="10dp"></GridView>
+</LinearLayout>

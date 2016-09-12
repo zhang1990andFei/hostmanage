@@ -14,23 +14,25 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:padding="2dp"
             android:text="床号:"
-            android:layout_gravity="right"
-            android:padding="2dp"
             android:textColor="@color/black" />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:padding="2dp"
             android:text="姓名:"
-            android:layout_gravity="right"
-            android:padding="2dp"
             android:textColor="@color/black" />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="性别:"
             android:layout_gravity="right"
             android:padding="2dp"
+            android:text="性别:"
             android:textColor="@color/black" />
     </LinearLayout>
 
@@ -43,20 +45,22 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:padding="2dp"
             android:text="5床"
-            android:padding="2dp"
             android:textColor="@color/black" />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:padding="2dp"
             android:text="素还真"
-            android:padding="2dp"
             android:textColor="@color/black" />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="男"
             android:padding="2dp"
+            android:text="男"
             android:textColor="@color/black" />
     </LinearLayout>
 
@@ -69,16 +73,17 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="寄语:"
             android:layout_gravity="right"
             android:padding="2dp"
+            android:text="寄语:"
             android:textColor="@color/black" />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="主治医生:"
             android:layout_gravity="right"
             android:padding="2dp"
+            android:text="主治医生:"
             android:textColor="@color/black" />
     </LinearLayout>
 
@@ -91,14 +96,17 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="半神半圣亦半仙"
             android:padding="2dp"
+            android:text="半神半圣亦半仙"
             android:textColor="@color/black" />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="素续缘"
             android:padding="2dp"
+            android:text="素续缘"
             android:textColor="@color/black" />
     </LinearLayout>
+
+
 </LinearLayout>
