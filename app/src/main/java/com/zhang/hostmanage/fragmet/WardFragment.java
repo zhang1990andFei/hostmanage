@@ -1,18 +1,27 @@
 package com.zhang.hostmanage.fragmet;
 
 
+import android.animation.ValueAnimator;
 import android.app.Fragment;
+import android.graphics.Point;
 import android.os.Bundle;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import android.view.animation.Animation;
+import android.view.animation.LinearInterpolator;
+import android.view.animation.TranslateAnimation;
 import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+
+import com.nineoldandroids.animation.AnimatorSet;
+import com.nineoldandroids.animation.ObjectAnimator;
 import com.zhang.hostmanage.R;
 import com.zhang.hostmanage.adapter.MyAdapter;
 
@@ -32,6 +41,9 @@ public class WardFragment extends Fragment implements AdapterView.OnItemClickLis
     private RelativeLayout warddetail_layout;
     private RelativeLayout detailshow_layout;
     private TextView showdetail_button;
+    private Boolean right_show = false;
+    private Boolean detail_show;
+    private TextView animation_text;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -43,16 +55,103 @@ public class WardFragment extends Fragment implements AdapterView.OnItemClickLis
         detailshow_layout = (RelativeLayout) view.findViewById(R.id.detailshow_rlayout);
         showdetail_button = (TextView) view.findViewById(R.id.detail_show);
         showdetail_button.setOnClickListener(this);
+        animation_text = (TextView) view.findViewById(R.id.animation_text);
         return view;
     }
 
     @Override
     public void onClick(View view) {
-        detailshow_layout.setVisibility(View.VISIBLE);
+        switch (view.getId()) {
+            case R.id.warddetail_rlayout:
+                Animation translateAnimation = new TranslateAnimation(0, 100, 0, 0);
+                Animation translationmleft = new TranslateAnimation(0, 100, 0, 0);
+                translationmleft.setDuration(1000);
+                translateAnimation.setDuration(1000);//设置动画持续时间为3秒
+                //  translateAnimation.setInterpolator(getActivity(), android.R.anim.cycle_interpolator);//设置动画插入器
+                translateAnimation.setFillAfter(true);//设置动画结束后保持当前的位置（即不返回到动画开始前的位置）
+                translationmleft.setFillAfter(true);
+                warddetail_layout.startAnimation(translateAnimation);
+                mGridView.startAnimation(translationmleft);
+                right_show = false;
+                break;
+        }
+
     }
 
     @Override
     public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-        warddetail_layout.setVisibility(View.VISIBLE);
+        if (right_show) {
+
+        } else {
+//            //  warddetail_layout.setVisibility(View.VISIBLE);
+//            Animation translateAnimation = new TranslateAnimation(0, -200, 0, 0);
+//            Animation translationmleft = new TranslateAnimation(0, -200, 0, 0);
+//            translationmleft.setDuration(1000);
+//            translateAnimation.setDuration(1000);//设置动画持续时间为3秒
+//            //  translateAnimation.setInterpolator(getActivity(), android.R.anim.cycle_interpolator);//设置动画插入器
+//            translateAnimation.setFillAfter(true);//设置动画结束后保持当前的位置（即不返回到动画开始前的位置）
+//            translationmleft.setFillAfter(true);
+//            warddetail_layout.startAnimation(translateAnimation);
+//            mGridView.startAnimation(translationmleft);
+//            ValueAnimator animator = ValueAnimator.ofFloat(200, 200);
+//            animator.setTarget(warddetail_layout);
+//            animator.setDuration(5000);
+//            animator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+//                @Override
+//                public void onAnimationUpdate(ValueAnimator animation) {
+//                    warddetail_layout.setTranslationY((Float) animation.getAnimatedValue());
+//                }
+//            });
+//            animator.start();
+//            ObjectAnimator anim1 = ObjectAnimator.ofFloat(warddetail_layout, "scaleX",
+//                    2.0f, 2.0f);
+////            ObjectAnimator anim2 = ObjectAnimator.ofFloat(mBlueBall, "scaleY",
+////                    1.0f, 2f);
+//            AnimatorSet animSet = new AnimatorSet();
+//            animSet.setDuration(2000);
+//            animSet.setInterpolator(new LinearInterpolator());
+//            //两个动画同时执行
+//            //    animSet.playTogether(anim1, anim2);
+//            animSet.play(anim1);
+//            animSet.start();
+            //设置自定义的TypeEvaluator，起始属性，终止属性
+//            ValueAnimator valueAnimator = ValueAnimator.ofObject(new MyTypeEvaluator(), new Point(0, 0), new Point(0, 0));
+//            //设置持续时间
+//            valueAnimator.setDuration(2000);
+
+            //开启动画
+            //          valueAnimator.start();
+//            warddetail_layout.getLeft();
+//            warddetail_layout.getX();
+//            warddetail_layout.getTranslationX();
+//            ObjectAnimator oa= ObjectAnimator.ofFloat(warddetail_layout,"translationX", 200);
+//            oa.setDuration(2000);
+//          //  oa.start();
+//            AnimatorSet animSet = new AnimatorSet();
+//            animSet.setDuration(2000);
+//            animSet.setInterpolator(new LinearInterpolator());
+//            //两个动画同时执行
+//            //    animSet.playTogether(anim1, anim2);
+//            animSet.play(oa);
+//            animSet.start();
+//            //设置持续时间
+//            valueAnimator.setDuration(2000);
+            ObjectAnimator anim = ObjectAnimator//
+                    .ofFloat(warddetail_layout, "zhy", 1.0F, 0.2F)//
+                    .setDuration(500);//
+            anim.start();
+
+            anim.addUpdateListener(new com.nineoldandroids.animation.ValueAnimator.AnimatorUpdateListener() {
+                @Override
+                public void onAnimationUpdate(com.nineoldandroids.animation.ValueAnimator valueAnimator) {
+                    float cVal = (Float) valueAnimator.getAnimatedValue();
+                    warddetail_layout.setAlpha(cVal);
+                    warddetail_layout.setScaleX(cVal);
+                    warddetail_layout.setScaleY(cVal);
+                }
+            });
+        }
+        right_show = true;
     }
+
 }

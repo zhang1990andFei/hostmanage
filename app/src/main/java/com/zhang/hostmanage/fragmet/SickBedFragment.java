@@ -29,7 +29,7 @@ import java.util.List;
  * 描述：
  */
 public class SickBedFragment extends Fragment {
-private View layout;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.sickbedfragment_view, container, false);

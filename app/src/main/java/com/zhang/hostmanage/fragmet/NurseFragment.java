@@ -35,16 +35,8 @@ private View layout;
         View view = inflater.inflate(R.layout.nurse_fragment, container, false);
         mGridView = (GridView) view.findViewById(R.id.nurseview_gridview);
         mGridView.setAdapter(mAdapter = new NurseAdapter(getActivity(), mDatas));
-        layout =view.findViewById(R.id.right_layout);
-        Animation translateAnimation=new TranslateAnimation(0, 100, 0, 0);
+        layout =view.findViewById(R.id.left_layout);
 
-        translateAnimation.setDuration(3000);//设置动画持续时间为3秒
-
-        translateAnimation.setInterpolator(getActivity(), android.R.anim.cycle_interpolator);//设置动画插入器
-
-        translateAnimation.setFillAfter(true);//设置动画结束后保持当前的位置（即不返回到动画开始前的位置）
-
-        layout.startAnimation(translateAnimation);
         return view;
 
     }
