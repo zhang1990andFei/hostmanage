@@ -10,4 +10,6 @@
     <color name="red">#ff0000</color>
     <color name="yellow">#F5D1B6</color>
     <color name="green">#5EB52B</color>
+    <color name="color_bg_selected">#ffffff</color>
+    <color name="color_bg_normal">#e7e7e8</color>
 </resources>

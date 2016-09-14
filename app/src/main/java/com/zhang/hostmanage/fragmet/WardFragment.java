@@ -6,6 +6,7 @@ import android.app.Fragment;
 import android.graphics.Point;
 import android.os.Bundle;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -136,22 +137,46 @@ public class WardFragment extends Fragment implements AdapterView.OnItemClickLis
 //            animSet.start();
 //            //设置持续时间
 //            valueAnimator.setDuration(2000);
-            ObjectAnimator anim = ObjectAnimator//
-                    .ofFloat(warddetail_layout, "zhy", 1.0F, 0.2F)//
-                    .setDuration(500);//
-            anim.start();
-
-            anim.addUpdateListener(new com.nineoldandroids.animation.ValueAnimator.AnimatorUpdateListener() {
-                @Override
-                public void onAnimationUpdate(com.nineoldandroids.animation.ValueAnimator valueAnimator) {
-                    float cVal = (Float) valueAnimator.getAnimatedValue();
-                    warddetail_layout.setAlpha(cVal);
-                    warddetail_layout.setScaleX(cVal);
-                    warddetail_layout.setScaleY(cVal);
-                }
-            });
+//            ObjectAnimator anim = ObjectAnimator//
+//                    .ofFloat(warddetail_layout, "zhy", 1.0F, 0.2F)//
+//                    .setDuration(500);//
+//            anim.start();
+//
+//            anim.addUpdateListener(new com.nineoldandroids.animation.ValueAnimator.AnimatorUpdateListener() {
+//                @Override
+//                public void onAnimationUpdate(com.nineoldandroids.animation.ValueAnimator valueAnimator) {
+//                    float cVal = (Float) valueAnimator.getAnimatedValue();
+//                    warddetail_layout.setAlpha(cVal);
+//                    warddetail_layout.setScaleX(cVal);
+//                    warddetail_layout.setScaleY(cVal);
+//                }
+//            });
+//        }
+//            ValueAnimator anim = ValueAnimator.ofFloat(0f, 1f);
+//            anim.setDuration(300);
+//            anim.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+//                @Override
+//                public void onAnimationUpdate(ValueAnimator animation) {
+//                    float currentValue = (float) animation.getAnimatedValue();
+//                    Log.e("anmimation", "cuurent value is " + currentValue);
+//                }
+//            });
+            float curTranslationX = warddetail_layout.getTranslationX();
+            ObjectAnimator animator = ObjectAnimator.ofFloat(warddetail_layout, "translationX", curTranslationX, -200f);
+            ObjectAnimator animator_grid = ObjectAnimator.ofFloat(mGridView, "translationX", curTranslationX, -200f);
+            animator.setDuration(2000);
+            animator_grid.setDuration(2000);
+            AnimatorSet animSet = new AnimatorSet();
+            animSet.setDuration(2000);
+            animSet.setInterpolator(new LinearInterpolator());
+            //两个动画同时执行
+            animSet.playTogether(animator, animator_grid);
+            // animSet.play();
+            animSet.start();
+            // animator.start();
+            //   anim.start();
+            right_show = true;
         }
-        right_show = true;
-    }
 
+    }
 }

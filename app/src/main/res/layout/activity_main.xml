@@ -46,8 +46,8 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:background="@drawable/color_radiobutton"
                 android:button="@null"
-                android:background="@null"
                 android:checked="true"
                 android:gravity="center"
                 android:text="病房"
@@ -58,8 +58,8 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:background="@drawable/color_radiobutton"
                 android:button="@null"
-                android:background="@null"
 
                 android:gravity="center"
                 android:text="病床"
@@ -70,8 +70,8 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:background="@drawable/color_radiobutton"
                 android:button="@null"
-                android:background="@null"
 
                 android:gravity="center"
                 android:text="医生"
@@ -82,8 +82,8 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:background="@drawable/color_radiobutton"
                 android:button="@null"
-                android:background="@null"
 
                 android:gravity="center"
                 android:text="护士"
@@ -94,9 +94,8 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:background="@drawable/color_radiobutton"
                 android:button="@null"
-
-                android:background="@null"
                 android:gravity="center"
                 android:text="设备"
                 android:textColor="@drawable/selector_button" />
@@ -112,17 +111,17 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="80dp"
-        android:gravity="center"
         android:background="#CCCCCC"
+        android:gravity="center"
         android:orientation="horizontal">
 
         <TextView
             android:layout_width="60dp"
             android:layout_height="match_parent"
-            android:drawableTop="@mipmap/ic_launcher"
-            android:gravity="center"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
+            android:drawableTop="@mipmap/ic_launcher"
+            android:gravity="center"
             android:text="加床"
             android:textColor="#000000"
             android:textSize="14sp" />
@@ -130,22 +129,22 @@
         <TextView
             android:layout_width="60dp"
             android:layout_height="match_parent"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
             android:drawableTop="@mipmap/ic_launcher"
             android:gravity="center"
             android:text="通讯录"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
             android:textColor="#000000"
             android:textSize="14sp" />
 
         <TextView
             android:layout_width="60dp"
             android:layout_height="match_parent"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
             android:drawableTop="@mipmap/ic_launcher"
             android:gravity="center"
             android:text="重要通知"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
             android:textColor="#000000"
             android:textSize="14sp" />
 

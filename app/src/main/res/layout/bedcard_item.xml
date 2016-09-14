@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/coner_blue"
     android:orientation="vertical">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/blue"
         android:orientation="horizontal">
 
         <TextView
@@ -56,13 +56,14 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="100dp"
+
         android:orientation="horizontal">
 
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="@color/colorwrite"
+android:background="@drawable/coner_gray"
             android:orientation="vertical">
 
             <LinearLayout
@@ -180,7 +181,7 @@
         <LinearLayout
             android:layout_width="100dp"
             android:layout_height="match_parent"
-            android:background="@color/colorgray"
+            android:background="@drawable/coner_right"
             android:orientation="horizontal">
 
             <TextView
@@ -197,6 +198,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center_vertical|left"
+                android:background="@drawable/coner_right"
                 android:text="床"
                 android:textColor="@color/black"
                 android:textSize="12sp" />
