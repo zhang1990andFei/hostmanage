@@ -63,13 +63,13 @@ public class SickBedFragment extends Fragment {
             map = new HashMap<String, Object>();
             map.put("text", i + "床");
             // map.put("Type", 2);
-            map.put("Type", Constants.NUMTHREE);
+            map.put("Type", 1);
             list.add(map);
 
             map = new HashMap<String, Object>();
             map.put("text", i + "床");
             //  map.put("Type", 2);
-            map.put("Type", Constants.NUMFOURTH);
+            map.put("Type", 2);
             list.add(map);
         }
         adapter = new MyGridViewAdapter(getActivity(), list);

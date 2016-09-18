@@ -1,6 +1,7 @@
 package com.zhang.hostmanage.adapter;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -65,7 +66,10 @@ public class MyGridViewAdapter extends BaseAdapter {
         Map<String,Object> map = list.get(arg0);
         if(convertView == null){
             viewHolder = new viewHolder();
+            int x= Integer.parseInt(map.get("Type").toString());
+            Log.e("asd",x+"");
             switch(Integer.parseInt(map.get("Type").toString())){
+
                 case Constants.NUMFIRST:
                     convertView = inflater.inflate(R.layout.sickbed_item, null);
                     viewHolder.tv = (TextView) convertView.findViewById(R.id.sickbed_wardnumber);
@@ -73,10 +77,10 @@ public class MyGridViewAdapter extends BaseAdapter {
                     break;
                 case Constants.NUMSECONd:
                     convertView = inflater.inflate(R.layout.sickbed_listitem, null);
-
                     viewHolder.tv = (TextView) convertView.findViewById(R.id.sickbed_bednumber);
                     viewHolder.sickbeditem_name = (TextView) convertView.findViewById(R.id.sickbed_name);
                     break;
+
             }
             convertView.setTag(viewHolder);
         }else{
