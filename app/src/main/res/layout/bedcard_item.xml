@@ -1,13 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:background="@drawable/coner_blue"
+    android:background="@drawable/shadow_gray"
+    >
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/shadow_gray"
+    android:layout_marginRight="2dp"
+    android:layout_marginBottom="2dp"
     android:orientation="vertical">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@drawable/coner_blue"
         android:orientation="horizontal">
 
         <TextView
@@ -47,23 +56,23 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:layout_marginRight="10dp"
+            android:padding="2dp"
             android:background="@drawable/circle_red"
             android:text="1级护理"
             android:textColor="@color/colorwrite"
-            android:textSize="18sp" />
+            android:textSize="14sp" />
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="100dp"
-
         android:orientation="horizontal">
 
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-android:background="@drawable/coner_gray"
+            android:background="@drawable/coner_gray"
             android:orientation="vertical">
 
             <LinearLayout
@@ -115,30 +124,29 @@ android:background="@drawable/coner_gray"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_gravity="bottom|center_horizontal"
+                android:layout_margin="5dp"
                 android:layout_weight="1"
                 android:gravity="left"
-                android:layout_margin="5dp"
                 android:orientation="horizontal">
 
                 <TextView
                     android:layout_width="wrap_content"
 
                     android:layout_height="wrap_content"
-                    android:background="@drawable/circle_text"
+                    android:layout_margin="5dp"
 
+                    android:background="@drawable/circle_text"
                     android:gravity="center"
                     android:text="液"
-                    android:layout_margin="5dp"
                     android:textColor="@color/yellow"
                     android:textSize="14sp" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
                     android:background="@drawable/circle_text"
                     android:gravity="center"
-
-                    android:layout_margin="5dp"
                     android:text="温"
                     android:textColor="@color/yellow"
                     android:textSize="14sp" />
@@ -146,31 +154,30 @@ android:background="@drawable/coner_gray"
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
                     android:background="@drawable/circle_text"
                     android:gravity="center"
-                    android:layout_margin="5dp"
-
                     android:text="术"
                     android:textColor="@color/yellow"
-                    android:textSize="18sp" />
+                    android:textSize="14sp" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
                     android:background="@drawable/circle_text"
                     android:gravity="center"
                     android:text="管"
-                    android:layout_margin="5dp"
                     android:textColor="@color/yellow"
-                    android:textSize="18sp" />
+                    android:textSize="14sp" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
                     android:background="@drawable/circle_text"
                     android:gravity="center"
                     android:text="查"
-                 android:layout_margin="5dp"
                     android:textColor="@color/yellow"
                     android:textSize="14sp" />
 
@@ -197,11 +204,12 @@ android:background="@drawable/coner_gray"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:gravity="center_vertical|left"
                 android:background="@drawable/coner_right"
+                android:gravity="center_vertical|left"
                 android:text="床"
                 android:textColor="@color/black"
                 android:textSize="12sp" />
         </LinearLayout>
     </LinearLayout>
 </LinearLayout>
+</FrameLayout>

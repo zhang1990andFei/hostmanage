@@ -63,16 +63,19 @@ public class WardFragment extends Fragment implements AdapterView.OnItemClickLis
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
-            case R.id.warddetail_rlayout:
-                Animation translateAnimation = new TranslateAnimation(0, 100, 0, 0);
-                Animation translationmleft = new TranslateAnimation(0, 100, 0, 0);
-                translationmleft.setDuration(1000);
-                translateAnimation.setDuration(1000);//设置动画持续时间为3秒
-                //  translateAnimation.setInterpolator(getActivity(), android.R.anim.cycle_interpolator);//设置动画插入器
-                translateAnimation.setFillAfter(true);//设置动画结束后保持当前的位置（即不返回到动画开始前的位置）
-                translationmleft.setFillAfter(true);
-                warddetail_layout.startAnimation(translateAnimation);
-                mGridView.startAnimation(translationmleft);
+            case R.id.detail_show:
+                float curTranslationX = warddetail_layout.getTranslationX();
+                ObjectAnimator animator = ObjectAnimator.ofFloat(warddetail_layout, "translationX", curTranslationX, 0f);
+                ObjectAnimator animator_grid = ObjectAnimator.ofFloat(mGridView, "translationX", curTranslationX, 0f);
+                animator.setDuration(1000);
+                animator_grid.setDuration(1000);
+                AnimatorSet animSet = new AnimatorSet();
+                animSet.setDuration(1000);
+                animSet.setInterpolator(new LinearInterpolator());
+                //两个动画同时执行
+                animSet.playTogether(animator, animator_grid);
+                // animSet.play();
+                animSet.start();
                 right_show = false;
                 break;
         }
@@ -164,10 +167,10 @@ public class WardFragment extends Fragment implements AdapterView.OnItemClickLis
             float curTranslationX = warddetail_layout.getTranslationX();
             ObjectAnimator animator = ObjectAnimator.ofFloat(warddetail_layout, "translationX", curTranslationX, -200f);
             ObjectAnimator animator_grid = ObjectAnimator.ofFloat(mGridView, "translationX", curTranslationX, -200f);
-            animator.setDuration(2000);
-            animator_grid.setDuration(2000);
+            animator.setDuration(1000);
+            animator_grid.setDuration(1000);
             AnimatorSet animSet = new AnimatorSet();
-            animSet.setDuration(2000);
+            animSet.setDuration(1000);
             animSet.setInterpolator(new LinearInterpolator());
             //两个动画同时执行
             animSet.playTogether(animator, animator_grid);

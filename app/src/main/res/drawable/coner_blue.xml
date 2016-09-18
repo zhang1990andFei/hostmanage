@@ -8,13 +8,14 @@
         android:width="1dp"
         android:color="@color/colorgray"></stroke>
     <!-- 矩形的圆角半径 -->
-    <corners android:radius="10dp"/>
 
-    <!--   android:bottomLeftRadius="5dp"
-       android:bottomRightRadius="5dp"
+
+    <corners  android:bottomLeftRadius="0dp"
+       android:bottomRightRadius="0dp"
        android:topLeftRadius="5dp"
-       android:topRightRadius="5dp"-->
-    />
+       android:topRightRadius="5dp"
+   />
+
 
 </shape>
 

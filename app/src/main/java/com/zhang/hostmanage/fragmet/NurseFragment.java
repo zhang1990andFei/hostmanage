@@ -34,8 +34,7 @@ private View layout;
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.nurse_fragment, container, false);
         mGridView = (GridView) view.findViewById(R.id.nurseview_gridview);
-        mGridView.setAdapter(mAdapter = new NurseAdapter(getActivity(), mDatas));
-        layout =view.findViewById(R.id.left_layout);
+      //  mGridView.setAdapter(mAdapter = new NurseAdapter(getActivity(), mDatas));
 
         return view;
 
