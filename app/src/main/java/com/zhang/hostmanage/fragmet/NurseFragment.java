@@ -28,18 +28,18 @@ public class NurseFragment extends Fragment {
     private List<String> mDatas = new ArrayList<String>(Arrays.asList("素还真",
             "倦收天", "温皇", "任飘渺", "黑白郎君", "100", "100", "100"));
     private NurseAdapter mAdapter;
-private View layout;
+    private View layout;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.nurse_fragment, container, false);
         mGridView = (GridView) view.findViewById(R.id.nurseview_gridview);
-      //  mGridView.setAdapter(mAdapter = new NurseAdapter(getActivity(), mDatas));
+        mAdapter = new NurseAdapter(getActivity(), mDatas);
+        mGridView.setAdapter(mAdapter);
 
         return view;
 
     }
-
 
 
 }

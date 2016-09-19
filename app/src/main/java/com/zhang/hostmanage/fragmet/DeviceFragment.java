@@ -32,52 +32,52 @@ private TextView anim_text;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.device_fragment, container, false);
-        anim_text= (TextView) view.findViewById(R.id.anim_text);
-        Animation translateAnimation=new TranslateAnimation(0, -100, 0, 0);
-        translateAnimation.setDuration(1000);//设置动画持续时间为3秒
-      //  translateAnimation.setInterpolator(getActivity(), android.R.anim.cycle_interpolator);//设置动画插入器
-        translateAnimation.setFillAfter(true);//设置动画结束后保持当前的位置（即不返回到动画开始前的位置）
-        anim_text.startAnimation(translateAnimation);
-        lvnote = (GridView) view.findViewById(R.id.gridView1);
-        // The item width is about 200，项目宽度大概200像素
-        colnum = (int) (((getResources().getDisplayMetrics().widthPixels)) / 200);
-        lvnote.setNumColumns(colnum);
-
-        HashMap<String, String> mapitem1 = new HashMap<String, String>();
-        mapitem1.put("note", "Hello1...");
-        mapitem1.put("noteid", "1");
-        mynotelist.add(mapitem1);
-
-        HashMap<String, String> mapitem2 = new HashMap<String, String>();
-        mapitem2.put("note", "Hello2...");
-        mapitem2.put("noteid", "2");
-        mynotelist.add(mapitem2);
-
-        HashMap<String, String> mapitem3 = new HashMap<String, String>();
-        mapitem3.put("note", "Hello3...");
-        mapitem3.put("noteid", "3");
-        mynotelist.add(mapitem3);
-
-        HashMap<String, String> mapitem4 = new HashMap<String, String>();
-        mapitem4.put("note", "Hello4...");
-        mapitem4.put("noteid", "4");
-        mynotelist.add(mapitem4);
-
-        HashMap<String, String> mapitem5 = new HashMap<String, String>();
-        mapitem5.put("note", "Hello5...");
-        mapitem5.put("noteid", "5");
-        mynotelist.add(mapitem5);
-
-        HashMap<String, String> mapitem6 = new HashMap<String, String>();
-        mapitem6.put("note", "Hello6...");
-        mapitem6.put("noteid", "6");
-        mynotelist.add(mapitem6);
-
-        NoteAdapter adapter = new NoteAdapter(getActivity(), mynotelist, R.layout.note_item,
-                new String[]{"note"},
-                new int[]{R.id.tvNote});
-
-        lvnote.setAdapter(adapter);
+//        anim_text= (TextView) view.findViewById(R.id.anim_text);
+//        Animation translateAnimation=new TranslateAnimation(0, -100, 0, 0);
+//        translateAnimation.setDuration(1000);//设置动画持续时间为3秒
+//      //  translateAnimation.setInterpolator(getActivity(), android.R.anim.cycle_interpolator);//设置动画插入器
+//        translateAnimation.setFillAfter(true);//设置动画结束后保持当前的位置（即不返回到动画开始前的位置）
+//        anim_text.startAnimation(translateAnimation);
+//        lvnote = (GridView) view.findViewById(R.id.gridView1);
+//        // The item width is about 200，项目宽度大概200像素
+//        colnum = (int) (((getResources().getDisplayMetrics().widthPixels)) / 200);
+//        lvnote.setNumColumns(colnum);
+//
+//        HashMap<String, String> mapitem1 = new HashMap<String, String>();
+//        mapitem1.put("note", "Hello1...");
+//        mapitem1.put("noteid", "1");
+//        mynotelist.add(mapitem1);
+//
+//        HashMap<String, String> mapitem2 = new HashMap<String, String>();
+//        mapitem2.put("note", "Hello2...");
+//        mapitem2.put("noteid", "2");
+//        mynotelist.add(mapitem2);
+//
+//        HashMap<String, String> mapitem3 = new HashMap<String, String>();
+//        mapitem3.put("note", "Hello3...");
+//        mapitem3.put("noteid", "3");
+//        mynotelist.add(mapitem3);
+//
+//        HashMap<String, String> mapitem4 = new HashMap<String, String>();
+//        mapitem4.put("note", "Hello4...");
+//        mapitem4.put("noteid", "4");
+//        mynotelist.add(mapitem4);
+//
+//        HashMap<String, String> mapitem5 = new HashMap<String, String>();
+//        mapitem5.put("note", "Hello5...");
+//        mapitem5.put("noteid", "5");
+//        mynotelist.add(mapitem5);
+//
+//        HashMap<String, String> mapitem6 = new HashMap<String, String>();
+//        mapitem6.put("note", "Hello6...");
+//        mapitem6.put("noteid", "6");
+//        mynotelist.add(mapitem6);
+//
+//        NoteAdapter adapter = new NoteAdapter(getActivity(), mynotelist, R.layout.note_item,
+//                new String[]{"note"},
+//                new int[]{R.id.tvNote});
+//
+//        lvnote.setAdapter(adapter);
         return view;
     }
 

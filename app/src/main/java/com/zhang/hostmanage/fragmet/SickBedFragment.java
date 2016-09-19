@@ -48,30 +48,53 @@ public class SickBedFragment extends Fragment {
 
         list = new ArrayList<Map<String, Object>>();
         Map<String, Object> map = null;
-        for (int i = 0; i < 5; i++) {
-            map = new HashMap<String, Object>();
-            map.put("text", i + "房");
-            //   map.put("Type",1);
-            map.put("Type", Constants.NUMFIRST);
-            list.add(map);
-            map = new HashMap<String, Object>();
-            map.put("text", i + "床");
-            //  map.put("Type",2);
-            map.put("Type", Constants.NUMSECONd);
-            list.add(map);
 
-            map = new HashMap<String, Object>();
-            map.put("text", i + "床");
-            // map.put("Type", 2);
-            map.put("Type", 1);
-            list.add(map);
+        map = new HashMap<String, Object>();
+        map.put("text", 1 + "房");
+        map.put("textname", "夔禺疆");
+        //   map.put("Type",1);
+        map.put("Type", Constants.NUMFIRST);
+        list.add(map);
+        map = new HashMap<String, Object>();
+        map.put("text", 1 + "床");
+        map.put("textname", "任平生");
+        //  map.put("Type",2);
+        map.put("Type", Constants.NUMSECONd);
+        list.add(map);
 
-            map = new HashMap<String, Object>();
-            map.put("text", i + "床");
-            //  map.put("Type", 2);
-            map.put("Type", 2);
-            list.add(map);
-        }
+        map = new HashMap<String, Object>();
+        map.put("text", 2 + "床");
+        map.put("textname", "墨倾池");
+        // map.put("Type", 2);
+        map.put("Type", 2);
+        list.add(map);
+
+        map = new HashMap<String, Object>();
+        map.put("text", 4 + "床");
+        map.put("textname", "玉梁皇");
+        //  map.put("Type", 2);
+        map.put("Type", 2);
+        list.add(map);
+        map = new HashMap<String, Object>();
+        map.put("text", 5 + "床");
+        map.put("textname", "红尘雪");
+
+        //  map.put("Type", 2);
+        map.put("Type", 2);
+        list.add(map);
+        map = new HashMap<String, Object>();
+        map.put("text", 6 + "床");
+        map.put("textname", "生命练习生");
+        //  map.put("Type", 2);
+        map.put("Type", 2);
+        list.add(map);
+        map = new HashMap<String, Object>();
+        map.put("text", 7 + "床");
+        map.put("textname", "剑非道");
+        //  map.put("Type", 2);
+        map.put("Type", 2);
+        list.add(map);
+
         adapter = new MyGridViewAdapter(getActivity(), list);
         gridView.setAdapter(adapter);
         return view;
