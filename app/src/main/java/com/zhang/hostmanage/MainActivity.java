@@ -5,9 +5,12 @@ import android.app.Activity;
 import android.app.FragmentTransaction;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.FrameLayout;
+import android.widget.LinearLayout;
 import android.widget.RadioButton;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.zhang.hostmanage.fragmet.DeviceFragment;
@@ -15,6 +18,8 @@ import com.zhang.hostmanage.fragmet.DoctorFragment;
 import com.zhang.hostmanage.fragmet.NurseFragment;
 import com.zhang.hostmanage.fragmet.SickBedFragment;
 import com.zhang.hostmanage.fragmet.WardFragment;
+
+import org.w3c.dom.Text;
 
 public class MainActivity extends Activity implements View.OnClickListener {
 
@@ -31,14 +36,26 @@ public class MainActivity extends Activity implements View.OnClickListener {
     private DeviceFragment deviceFragment;
 
     private FrameLayout frameLayout;
+    private LinearLayout bottom_layout;
+
+    private LinearLayout extra_button;
+    private LinearLayout constants_button;
+    private LinearLayout remiand_button;
+    private LinearLayout notice_button;
+    private LinearLayout broadcast_button;
+    private LinearLayout change_button;
+    private LinearLayout restart_button;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         initView();
         initEvents();
         initData();
+
         //首先 我们先选定一个
 
     }
@@ -51,6 +68,15 @@ public class MainActivity extends Activity implements View.OnClickListener {
         radio_device = (RadioButton) findViewById(R.id.radio_device);
         radio_nurse = (RadioButton) findViewById(R.id.radio_nurse);
         frameLayout = (FrameLayout) findViewById(R.id.fragment_container);
+        extra_button = (LinearLayout) findViewById(R.id.extrabed_button);
+        constants_button = (LinearLayout) findViewById(R.id.contacts_button);
+        remiand_button = (LinearLayout) findViewById(R.id.remind_button);
+        notice_button = (LinearLayout) findViewById(R.id.notice_button);
+        broadcast_button = (LinearLayout) findViewById(R.id.broadcast_button);
+        change_button = (LinearLayout) findViewById(R.id.changebed_button);
+        restart_button = (LinearLayout) findViewById(R.id.restart_button);
+        restart_button.setVisibility(View.GONE);
+
     }
 
     //初始化 监听事件
@@ -65,7 +91,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
 
     private void initData() {
         FragmentTransaction ft;
-        ft =getFragmentManager().beginTransaction();
+        ft = getFragmentManager().beginTransaction();
         ft.replace(R.id.fragment_container, new WardFragment());
         ft.commit();
     }
@@ -73,33 +99,80 @@ public class MainActivity extends Activity implements View.OnClickListener {
     @Override
     public void onClick(View v) {
         FragmentTransaction t;
-        t =getFragmentManager().beginTransaction();
+        t = getFragmentManager().beginTransaction();
+        final LayoutInflater inflater = LayoutInflater.from(this);
         switch (v.getId()) {
             case R.id.radio_ward:
-
                 t.replace(R.id.fragment_container, new WardFragment());
-                Toast.makeText(this,"点击",Toast.LENGTH_SHORT).show();
+                initButton(6);
                 t.commit();
                 break;
             case R.id.radio_sickbed:
                 t.replace(R.id.fragment_container, new SickBedFragment());
+
+                initButton(4);
                 t.commit();
                 break;
             case R.id.radio_doctor:
                 t.replace(R.id.fragment_container, new DoctorFragment());
+                initButton(3);
                 t.commit();
                 break;
             case R.id.radio_nurse:
                 t.replace(R.id.fragment_container, new NurseFragment());
+                initButton(3);
                 t.commit();
                 break;
             case R.id.radio_device:
                 t.replace(R.id.fragment_container, new DeviceFragment());
+                initButton(1);
                 t.commit();
                 break;
 
             default:
                 break;
+        }
+    }
+
+    private void initButton(int type) {
+        switch (type) {
+            case 1:
+                restart_button.setVisibility(View.VISIBLE);
+                extra_button.setVisibility(View.GONE);
+                constants_button.setVisibility(View.GONE);
+                remiand_button.setVisibility(View.GONE);
+                notice_button.setVisibility(View.GONE);
+                broadcast_button.setVisibility(View.GONE);
+                change_button.setVisibility(View.GONE);
+                break;
+            case 3:
+                restart_button.setVisibility(View.GONE);
+                extra_button.setVisibility(View.GONE);
+                constants_button.setVisibility(View.VISIBLE);
+                remiand_button.setVisibility(View.VISIBLE);
+                notice_button.setVisibility(View.VISIBLE);
+                broadcast_button.setVisibility(View.GONE);
+                change_button.setVisibility(View.GONE);
+                break;
+            case 4:
+                restart_button.setVisibility(View.GONE);
+                extra_button.setVisibility(View.GONE);
+                constants_button.setVisibility(View.VISIBLE);
+                remiand_button.setVisibility(View.VISIBLE);
+                notice_button.setVisibility(View.VISIBLE);
+                broadcast_button.setVisibility(View.VISIBLE);
+                change_button.setVisibility(View.GONE);
+                break;
+            case 6:
+                restart_button.setVisibility(View.GONE);
+                extra_button.setVisibility(View.VISIBLE);
+                constants_button.setVisibility(View.VISIBLE);
+                remiand_button.setVisibility(View.VISIBLE);
+                notice_button.setVisibility(View.VISIBLE);
+                broadcast_button.setVisibility(View.VISIBLE);
+                change_button.setVisibility(View.VISIBLE);
+                break;
+
         }
     }
 }

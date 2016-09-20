@@ -18,6 +18,7 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_gravity="left"
+            android:layout_marginLeft="20dp"
             android:gravity="center"
             android:padding="10dp"
             android:text="2016年8月31日"
@@ -34,11 +35,15 @@
             android:textColor="#000000"
             android:textSize="28sp" />
 
-        <RadioGroup
+        <View
             android:layout_width="0dp"
             android:layout_height="match_parent"
+            android:layout_weight="1"></View>
+
+        <RadioGroup
+            android:layout_width="900dp"
+            android:layout_height="match_parent"
             android:layout_marginRight="20dp"
-            android:layout_weight="1"
             android:orientation="horizontal">
 
             <RadioButton
@@ -51,7 +56,8 @@
                 android:checked="true"
                 android:gravity="center"
                 android:text="病房"
-                android:textColor="@drawable/selector_button" />
+                android:textColor="@drawable/selector_button"
+                android:textSize="24sp" />
 
             <RadioButton
                 android:id="@+id/radio_sickbed"
@@ -60,10 +66,10 @@
                 android:layout_weight="1"
                 android:background="@drawable/color_radiobutton"
                 android:button="@null"
-
                 android:gravity="center"
                 android:text="病床"
-                android:textColor="@drawable/selector_button" />
+                android:textColor="@drawable/selector_button"
+                android:textSize="24sp" />
 
             <RadioButton
                 android:id="@+id/radio_doctor"
@@ -72,10 +78,10 @@
                 android:layout_weight="1"
                 android:background="@drawable/color_radiobutton"
                 android:button="@null"
-
                 android:gravity="center"
                 android:text="医生"
-                android:textColor="@drawable/selector_button" />
+                android:textColor="@drawable/selector_button"
+                android:textSize="24sp" />
 
             <RadioButton
                 android:id="@+id/radio_nurse"
@@ -84,10 +90,10 @@
                 android:layout_weight="1"
                 android:background="@drawable/color_radiobutton"
                 android:button="@null"
-
                 android:gravity="center"
                 android:text="护士"
-                android:textColor="@drawable/selector_button" />
+                android:textColor="@drawable/selector_button"
+                android:textSize="24sp" />
 
             <RadioButton
                 android:id="@+id/radio_device"
@@ -98,7 +104,8 @@
                 android:button="@null"
                 android:gravity="center"
                 android:text="设备"
-                android:textColor="@drawable/selector_button" />
+                android:textColor="@drawable/selector_button"
+                android:textSize="24sp" />
         </RadioGroup>
     </LinearLayout>
 
@@ -108,46 +115,6 @@
         android:layout_height="0dp"
         android:layout_weight="1"></FrameLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="80dp"
-        android:background="#CCCCCC"
-        android:gravity="center"
-        android:orientation="horizontal">
 
-        <TextView
-            android:layout_width="60dp"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:drawableTop="@mipmap/ic_launcher"
-            android:gravity="center"
-            android:text="加床"
-            android:textColor="#000000"
-            android:textSize="14sp" />
-
-        <TextView
-            android:layout_width="60dp"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:drawableTop="@mipmap/ic_launcher"
-            android:gravity="center"
-            android:text="通讯录"
-            android:textColor="#000000"
-            android:textSize="14sp" />
-
-        <TextView
-            android:layout_width="60dp"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:drawableTop="@mipmap/ic_launcher"
-            android:gravity="center"
-            android:text="重要通知"
-            android:textColor="#000000"
-            android:textSize="14sp" />
-
-
-    </LinearLayout>
+    <include layout="@layout/ward_button"></include>
 </LinearLayout>

@@ -14,10 +14,10 @@
                 android:startColor="#0F000000" />
 
             <corners
-                android:bottomLeftRadius="6dip"
-                android:bottomRightRadius="6dip"
-                android:topLeftRadius="6dip"
-                android:topRightRadius="6dip" />
+                android:bottomLeftRadius="10dip"
+                android:bottomRightRadius="10dip"
+                android:topLeftRadius="10dip"
+                android:topRightRadius="10dip" />
         </shape>
     </item>
 
@@ -34,10 +34,10 @@
                 android:startColor="#FFFFFF" />
 
             <corners
-                android:bottomLeftRadius="6dip"
-                android:bottomRightRadius="6dip"
-                android:topLeftRadius="6dip"
-                android:topRightRadius="6dip" />
+                android:bottomLeftRadius="10dip"
+                android:bottomRightRadius="10dip"
+                android:topLeftRadius="10dip"
+                android:topRightRadius="10dip" />
         </shape>
     </item>
 
