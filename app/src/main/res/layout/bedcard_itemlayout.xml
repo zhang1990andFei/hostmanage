@@ -8,15 +8,13 @@
     <GridView
         android:id="@+id/sickbedgridview_grid"
         android:layout_width="match_parent"
-        android:layout_height="160dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
+        android:layout_height="180dp"
         android:fadingEdge="none"
         android:horizontalSpacing="10dp"
         android:numColumns="4"
         android:padding="5dp"
         android:scrollbars="none"
-        android:verticalSpacing="10dp"></GridView>
+        android:verticalSpacing="20dp"></GridView>
 
     <include
         android:id="@+id/bedcard_bottom"
