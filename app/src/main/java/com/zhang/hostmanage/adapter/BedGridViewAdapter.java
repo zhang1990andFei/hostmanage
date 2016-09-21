@@ -1,55 +1,67 @@
-package com.zhang.hostmanage.fragmet;
+package com.zhang.hostmanage.adapter;
 
-import android.app.Fragment;
-import android.os.Bundle;
-import android.os.Handler;
-import android.os.Looper;
-import android.os.Message;
-import android.support.annotation.Nullable;
-import android.text.Layout;
-import android.util.Log;
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.WindowManager;
-import android.view.animation.Animation;
-import android.view.animation.TranslateAnimation;
-import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.GridView;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.zhang.hostmanage.R;
-import com.zhang.hostmanage.adapter.BedGridViewAdapter;
-import com.zhang.hostmanage.adapter.MyAdapter;
-import com.zhang.hostmanage.adapter.MyGridViewAdapter;
 import com.zhang.hostmanage.utils.Constants;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 /**
- * 作者：Administrator on 2016/8/31 13:53
+ * 作者：Administrator on 2016/9/21 16:59
  * 描述：
  */
-public class SickBedFragment extends Fragment {
-    private GridView gridView;
-    private MyGridViewAdapter adapter;
-    private BedGridViewAdapter bedGridViewAdapter;
+public class BedGridViewAdapter extends BaseAdapter {
+    private LayoutInflater mInflater;
+    private Context mContext;
+    private List<String> mDatas;
+    private MyGridViewAdapter myGridViewAdapter;
     private List<Map<String, Object>> list;
-    private List<String> mDatas = new ArrayList<String>(Arrays.asList("素还真",
-            "倦收天", "温皇", "任飘渺", "黑白郎君", "100", "123"));
+
+    public BedGridViewAdapter(Context context, List<String> mDatas) {
+        mInflater = LayoutInflater.from(context);
+        this.mContext = context;
+        this.mDatas = mDatas;
+    }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.sickbed_layout, container, false);
+    public int getCount() {
+        return mDatas.size();
+    }
 
-        gridView = (GridView) view.findViewById(R.id.sickbed_grid);
+    @Override
+    public Object getItem(int position) {
+        return mDatas.get(position);
+    }
 
+    @Override
+    public long getItemId(int position) {
+        return position;
+    }
+
+
+    @Override
+    public View getView(int position, View convertView, ViewGroup parent) {
+        ViewHolder viewHolder = null;
+        if (convertView == null) {
+            convertView = mInflater.inflate(R.layout.bedcard_itemlayout, parent,
+                    false);
+            viewHolder = new ViewHolder();
+            viewHolder.gridView = (GridView) convertView.findViewById(R.id.sickbedgridview_grid);
+            convertView.setTag(viewHolder);
+        } else {
+            viewHolder = (ViewHolder) convertView.getTag();
+        }
+//        viewHolder.mTextView.setText(mDatas.get(position));
         list = new ArrayList<Map<String, Object>>();
         Map<String, Object> map = null;
         map = new HashMap<String, Object>();
@@ -63,7 +75,6 @@ public class SickBedFragment extends Fragment {
         map.put("textname", "任平生");
         //  map.put("Type",2);
         map.put("Type", Constants.NUMSECONd);
-        list.add(map);
 
         map = new HashMap<String, Object>();
         map.put("text", 2 + "床");
@@ -97,12 +108,16 @@ public class SickBedFragment extends Fragment {
         //  map.put("Type", 2);
         map.put("Type", 2);
         list.add(map);
+        list.add(map);
+        myGridViewAdapter = new MyGridViewAdapter(mContext, list);
 
-        adapter = new MyGridViewAdapter(getActivity(), list);
-        bedGridViewAdapter = new BedGridViewAdapter(getActivity(), mDatas);
-        gridView.setAdapter(bedGridViewAdapter);
-        return view;
+        viewHolder.gridView.setAdapter(myGridViewAdapter);
+        return convertView;
     }
 
+    private final class ViewHolder {
+        TextView mTextView;
+        GridView gridView;
+    }
 
 }

@@ -2,24 +2,13 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorgray"
+    android:background="@color/colorwrite"
     android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/animation_text"
-        android:layout_width="wrap_content"
-        android:layout_height="50dp"
-        android:layout_marginLeft="20dp"
-        android:gravity="center"
-        android:padding="5dp"
-        android:text="普外三病区"
-        android:textColor="#000000"
-        android:textSize="28sp" />
-
     <GridView
-        android:id="@+id/sickbed_grid"
+        android:id="@+id/sickbedgridview_grid"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="160dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:fadingEdge="none"
@@ -29,5 +18,7 @@
         android:scrollbars="none"
         android:verticalSpacing="10dp"></GridView>
 
-
+    <include
+        android:id="@+id/bedcard_bottom"
+        layout="@layout/sickbed_bottomlayout"></include>
 </LinearLayout>

@@ -12,4 +12,5 @@
     <color name="green">#5EB52B</color>
     <color name="color_bg_selected">#ffffff</color>
     <color name="color_bg_normal">#e7e7e8</color>
+    <color name="color_bottomblue">#89B0FF</color>
 </resources>

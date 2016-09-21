@@ -16,6 +16,7 @@ import android.view.animation.LinearInterpolator;
 import android.view.animation.TranslateAnimation;
 import android.widget.AdapterView;
 import android.widget.GridView;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -45,6 +46,8 @@ public class WardFragment extends Fragment implements AdapterView.OnItemClickLis
     private Boolean right_show = false;
     private Boolean detail_show;
     private TextView animation_text;
+    private ImageView back;
+    private ImageView hide;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -57,6 +60,10 @@ public class WardFragment extends Fragment implements AdapterView.OnItemClickLis
         showdetail_button = (TextView) view.findViewById(R.id.detail_show);
         showdetail_button.setOnClickListener(this);
         animation_text = (TextView) view.findViewById(R.id.animation_text);
+        back = (ImageView) view.findViewById(R.id.back_bedcard);
+        back.setOnClickListener(this);
+        hide = (ImageView) view.findViewById(R.id.hide_all);
+        hide.setOnClickListener(this);
         return view;
     }
 
@@ -64,18 +71,57 @@ public class WardFragment extends Fragment implements AdapterView.OnItemClickLis
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.detail_show:
+                float curTranslationX_detail = warddetail_layout.getTranslationX();
+                ObjectAnimator animator_detail = ObjectAnimator.ofFloat(warddetail_layout, "translationX", curTranslationX_detail, -850f);
+                ObjectAnimator animator_griddetial = ObjectAnimator.ofFloat(mGridView, "translationX", curTranslationX_detail, -850f);
+                ObjectAnimator animator_patient = ObjectAnimator.ofFloat(detailshow_layout, "translationX", curTranslationX_detail, -850f);
+                animator_detail.setDuration(500);
+                animator_griddetial.setDuration(500);
+                animator_patient.setDuration(500);
+                AnimatorSet animSet_detail = new AnimatorSet();
+                animSet_detail.setDuration(500);
+                animSet_detail.setInterpolator(new LinearInterpolator());
+                //两个动画同时执行
+                animSet_detail.playTogether(animator_detail, animator_griddetial, animator_patient);
+                // animSet.play();
+                animSet_detail.start();
+                showdetail_button.setVisibility(View.GONE);
+                back.setVisibility(View.INVISIBLE);
+                back.setClickable(false);
+                break;
+            case R.id.back_bedcard:
                 float curTranslationX = warddetail_layout.getTranslationX();
                 ObjectAnimator animator = ObjectAnimator.ofFloat(warddetail_layout, "translationX", curTranslationX, 0f);
                 ObjectAnimator animator_grid = ObjectAnimator.ofFloat(mGridView, "translationX", curTranslationX, 0f);
-                animator.setDuration(1000);
-                animator_grid.setDuration(1000);
+                animator.setDuration(500);
+                animator_grid.setDuration(500);
                 AnimatorSet animSet = new AnimatorSet();
-                animSet.setDuration(1000);
+                animSet.setDuration(500);
                 animSet.setInterpolator(new LinearInterpolator());
                 //两个动画同时执行
                 animSet.playTogether(animator, animator_grid);
                 // animSet.play();
                 animSet.start();
+                right_show = false;
+                break;
+            case R.id.hide_all:
+                float curTranslationXhide = warddetail_layout.getTranslationX();
+                animator_detail = ObjectAnimator.ofFloat(warddetail_layout, "translationX", curTranslationXhide, 0f);
+                animator_griddetial = ObjectAnimator.ofFloat(mGridView, "translationX", curTranslationXhide, 0f);
+                animator_patient = ObjectAnimator.ofFloat(detailshow_layout, "translationX", curTranslationXhide, 0f);
+                animator_detail.setDuration(500);
+                animator_griddetial.setDuration(500);
+                animator_patient.setDuration(500);
+                AnimatorSet animSet_detailhide = new AnimatorSet();
+                animSet_detailhide.setDuration(500);
+                animSet_detailhide.setInterpolator(new LinearInterpolator());
+                //两个动画同时执行
+                animSet_detailhide.playTogether(animator_detail, animator_griddetial, animator_patient);
+                // animSet.play();
+                animSet_detailhide.start();
+                showdetail_button.setVisibility(View.VISIBLE);
+                back.setVisibility(View.VISIBLE);
+                back.setClickable(true);
                 right_show = false;
                 break;
         }
@@ -165,12 +211,12 @@ public class WardFragment extends Fragment implements AdapterView.OnItemClickLis
 //                }
 //            });
             float curTranslationX = warddetail_layout.getTranslationX();
-            ObjectAnimator animator = ObjectAnimator.ofFloat(warddetail_layout, "translationX", curTranslationX, -200f);
-            ObjectAnimator animator_grid = ObjectAnimator.ofFloat(mGridView, "translationX", curTranslationX, -200f);
-            animator.setDuration(1000);
-            animator_grid.setDuration(1000);
+            ObjectAnimator animator = ObjectAnimator.ofFloat(warddetail_layout, "translationX", curTranslationX, -550f);
+            ObjectAnimator animator_grid = ObjectAnimator.ofFloat(mGridView, "translationX", curTranslationX, -550f);
+            animator.setDuration(500);
+            animator_grid.setDuration(500);
             AnimatorSet animSet = new AnimatorSet();
-            animSet.setDuration(1000);
+            animSet.setDuration(500);
             animSet.setInterpolator(new LinearInterpolator());
             //两个动画同时执行
             animSet.playTogether(animator, animator_grid);

@@ -8,10 +8,12 @@
         android:layout_width="wrap_content"
         android:layout_height="fill_parent"
         android:orientation="horizontal">
+
         <LinearLayout
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
-            android:background="@drawable/start_image"></LinearLayout>
+            android:background="@drawable/patient_contition"></LinearLayout>
+
         <include
             android:id="@+id/right_layout"
             layout="@layout/ward_detail" />

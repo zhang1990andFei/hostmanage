@@ -7,19 +7,20 @@
 
     <TextView
         android:id="@+id/animation_text"
-        android:layout_width="100dp"
+        android:layout_width="wrap_content"
         android:layout_height="50dp"
-        android:gravity="center"
-       android:layout_marginLeft="20dp"
+        android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
+        android:gravity="center"
         android:text="普外三病区"
-        android:textColor="#000000" />
+        android:textColor="#000000"
+        android:textSize="28sp" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginRight="20dp"
         android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
         android:orientation="horizontal">
 
         <GridView
@@ -33,19 +34,14 @@
 
         <RelativeLayout
             android:id="@+id/warddetail_rlayout"
-            android:layout_width="200dp"
+            android:layout_width="500dp"
             android:layout_height="match_parent"
-            android:layout_gravity="end"
+            android:layout_gravity="center"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="5dp"
             android:clickable="true"
             android:gravity="center_horizontal"
             android:visibility="visible">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="详细信息"
-                android:textColor="@android:color/white"
-                android:textSize="24sp" />
 
             <include
                 android:id="@+id/ward_detatillayout"
@@ -65,42 +61,23 @@
                     android:layout_gravity="center"
                     android:gravity="center"
                     android:text="···"
-                    android:textColor="@color/colorwrite" />
+                    android:textColor="@color/blue"
+                    android:textSize="30sp" />
             </LinearLayout>
         </RelativeLayout>
 
         <RelativeLayout
             android:id="@+id/detailshow_rlayout"
-            android:layout_width="70dp"
+            android:layout_width="300dp"
+            android:layout_marginTop="5dp"
             android:layout_height="match_parent"
-            android:layout_gravity="end"
-            android:background="#111"
+            android:layout_gravity="center"
             android:gravity="center_horizontal"
             android:visibility="visible">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="详细信息"
-                android:textColor="@android:color/white"
-                android:textSize="24sp" />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_alignParentBottom="true"
-                android:gravity="center"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:id="@+id/detail_info"
-                    android:layout_width="100dp"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="center"
-                    android:gravity="center"
-                    android:text="···"
-                    android:textColor="@color/colorwrite" />
-            </LinearLayout>
+            <include
+                android:id="@+id/patient_detail"
+                layout="@layout/patient_detailayout"></include>
         </RelativeLayout>
 
     </LinearLayout>

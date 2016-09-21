@@ -7,9 +7,8 @@
 
     <RelativeLayout
         android:id="@+id/grid_width"
-        android:layout_width="300dp"
-        android:layout_height="0dp"
-        android:layout_weight="1">
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
         <TextView
             android:id="@+id/docotor_name"
@@ -55,8 +54,9 @@
 
     <ImageView
         android:layout_width="match_parent"
-        android:layout_height="1dp"
+        android:layout_height="3px"
         android:layout_margin="2dp"
+        android:layerType="software"
         android:background="@drawable/dash" />
 
     <LinearLayout
@@ -68,28 +68,31 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="主要负责床位:"
             android:layout_marginLeft="5dp"
+            android:text="主要负责床位:"
             android:textColor="@color/black" />
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
             android:orientation="horizontal">
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:gravity="center"
                 android:layout_margin="2dp"
                 android:background="@drawable/circle_green"
-                android:text="1床"/>
+                android:gravity="center"
+                android:text="1床" />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:gravity="center"
                 android:layout_margin="2dp"
                 android:background="@drawable/circle_green"
-                android:text="2床"/>
+                android:gravity="center"
+                android:text="2床" />
         </LinearLayout>
     </LinearLayout>
 

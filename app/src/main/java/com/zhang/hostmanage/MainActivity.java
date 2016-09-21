@@ -3,8 +3,15 @@ package com.zhang.hostmanage;
 import android.app.Activity;
 
 import android.app.FragmentTransaction;
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.Intent;
+import android.content.IntentFilter;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
+import android.text.format.DateFormat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.FrameLayout;
@@ -18,8 +25,11 @@ import com.zhang.hostmanage.fragmet.DoctorFragment;
 import com.zhang.hostmanage.fragmet.NurseFragment;
 import com.zhang.hostmanage.fragmet.SickBedFragment;
 import com.zhang.hostmanage.fragmet.WardFragment;
+import com.zhang.hostmanage.view.DateView;
 
 import org.w3c.dom.Text;
+
+import java.text.SimpleDateFormat;
 
 public class MainActivity extends Activity implements View.OnClickListener {
 
@@ -45,7 +55,22 @@ public class MainActivity extends Activity implements View.OnClickListener {
     private LinearLayout broadcast_button;
     private LinearLayout change_button;
     private LinearLayout restart_button;
-
+    private TextView date_show;
+    private String format;
+    private static final int TIME_CHANGED = 1000;
+    private Handler mHandler = new Handler() {
+        @Override
+        public void handleMessage(Message msg) {
+            super.handleMessage(msg);
+            switch (msg.what) {
+                case TIME_CHANGED:
+                    date_show.setText(getSystemTime());
+                    break;
+                default:
+                    break;
+            }
+        }
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,9 +80,16 @@ public class MainActivity extends Activity implements View.OnClickListener {
         initView();
         initEvents();
         initData();
-
+        new TimeThread().start();
+        //   registerReceiver(mTimeRefreshReceiver, new IntentFilter(Intent.ACTION_TIME_TICK));
         //首先 我们先选定一个
 
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        // unregisterReceiver(mTimeRefreshReceiver);
     }
 
     //初始化  各种个 View
@@ -75,9 +107,12 @@ public class MainActivity extends Activity implements View.OnClickListener {
         broadcast_button = (LinearLayout) findViewById(R.id.broadcast_button);
         change_button = (LinearLayout) findViewById(R.id.changebed_button);
         restart_button = (LinearLayout) findViewById(R.id.restart_button);
+        date_show = (TextView) findViewById(R.id.main_date);
         restart_button.setVisibility(View.GONE);
 
+
     }
+
 
     //初始化 监听事件
     private void initEvents() {
@@ -173,6 +208,40 @@ public class MainActivity extends Activity implements View.OnClickListener {
                 change_button.setVisibility(View.VISIBLE);
                 break;
 
+        }
+    }
+
+    //广播
+    private BroadcastReceiver mTimeRefreshReceiver = new BroadcastReceiver() {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            if (Intent.ACTION_TIME_TICK.equals(intent.getAction())) {
+                date_show.setText(getSystemTime());
+            }
+        }
+    };
+
+    //获取时间
+    private CharSequence getSystemTime() {
+        format = "yyyy年MM月dd日      HH:mm:ss";
+        String date = new SimpleDateFormat(format).format(System.currentTimeMillis());
+        long sysTime = System.currentTimeMillis();
+        return date;
+    }
+
+    public class TimeThread extends Thread {
+        @Override
+        public void run() {
+            do {
+                try {
+                    Thread.sleep(1000);
+                    Message msg = new Message();
+                    msg.what = TIME_CHANGED;
+                    mHandler.sendMessage(msg);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            } while (true);
         }
     }
 }
