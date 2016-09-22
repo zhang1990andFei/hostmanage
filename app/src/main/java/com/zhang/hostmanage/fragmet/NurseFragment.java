@@ -25,8 +25,8 @@ import java.util.List;
  */
 public class NurseFragment extends Fragment {
     private GridView mGridView;
-    private List<String> mDatas = new ArrayList<String>(Arrays.asList("素还真",
-            "倦收天", "温皇", "任飘渺", "黑白郎君", "100", "100", "100"));
+    private List<String> mDatas = new ArrayList<String>(Arrays.asList("护师",
+            "护师", "科主任", "主任医生", "副主任医师", "实习医生", "科主任", "主管护师"));
     private NurseAdapter mAdapter;
     private View layout;
 
@@ -36,7 +36,6 @@ public class NurseFragment extends Fragment {
         mGridView = (GridView) view.findViewById(R.id.nurseview_gridview);
         mAdapter = new NurseAdapter(getActivity(), mDatas);
         mGridView.setAdapter(mAdapter);
-
         return view;
 
     }

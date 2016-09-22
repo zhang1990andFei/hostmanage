@@ -97,7 +97,6 @@ public class SickBedFragment extends Fragment {
         //  map.put("Type", 2);
         map.put("Type", 2);
         list.add(map);
-
         adapter = new MyGridViewAdapter(getActivity(), list);
         bedGridViewAdapter = new BedGridViewAdapter(getActivity(), mDatas);
         gridView.setAdapter(bedGridViewAdapter);

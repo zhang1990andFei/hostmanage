@@ -1,68 +1,76 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="140dp"
     android:background="@drawable/coner_white"
     android:orientation="vertical">
 
     <RelativeLayout
         android:id="@+id/grid_width"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
+        android:layout_height="80dp">
+            <TextView
+                android:id="@+id/docotor_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginTop="30dp"
+                android:layout_alignParentTop="true"
+                android:gravity="center"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:textSize="18sp"
+                android:text="姓名" />
+            <TextView
+                android:id="@+id/docotor_nametext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:textSize="18sp"
+                android:layout_toRightOf="@+id/docotor_name"
+                android:text="伏龙" />
+            <TextView
+                android:id="@+id/docotor_age"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/docotor_name"
+                android:gravity="center"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:textSize="18sp"
+                android:text="年龄" />
+            <TextView
+                android:id="@+id/docotor_agetext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/docotor_nametext"
+                android:layout_toRightOf="@+id/docotor_age"
+                android:textSize="18sp"
+                android:text="25" />
         <TextView
-            android:id="@+id/docotor_name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:padding="5dp"
-            android:text="姓名" />
 
-        <TextView
-            android:id="@+id/docotor_nametext"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_toRightOf="@+id/docotor_name"
-            android:padding="5dp"
-            android:text="伏龙" />
-
-        <TextView
-            android:id="@+id/docotor_age"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/docotor_name"
-            android:padding="5dp"
-            android:text="年龄" />
-
-        <TextView
-            android:id="@+id/docotor_agetext"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/docotor_nametext"
-            android:layout_toRightOf="@+id/docotor_age"
-            android:padding="5dp"
-            android:text="25" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
+            android:layout_margin="10dp"
             android:background="@drawable/circle_greentext"
             android:gravity="center"
-            android:text="护师" />
+            android:text="科主任"
+            android:textColor="@color/colorwrite" />
     </RelativeLayout>
 
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="3px"
+        android:layout_marginBottom="30dp"
         android:layout_margin="2dp"
-        android:layerType="software"
-        android:background="@drawable/dash" />
+        android:background="@drawable/dash"
+        android:layerType="software" />
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
+        android:layout_height="60dp"
         android:orientation="vertical">
 
         <TextView
