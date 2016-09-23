@@ -4,11 +4,14 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <ImageView
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:layout_marginLeft="20dp"
+        android:text="3"
+        android:textSize="16sp"
         android:layout_marginTop="10dp"
-        android:background="@drawable/device_icon" />
+        android:layout_marginLeft="20dp"
+        android:textColor="@color/black"
+        android:background="@drawable/ward_icon" />
 </LinearLayout>

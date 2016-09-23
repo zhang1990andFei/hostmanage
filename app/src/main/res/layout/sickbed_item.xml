@@ -1,15 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
 
-    <TextView
-        android:id="@+id/sickbed_wardnumber"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@color/colorgray"
-        android:gravity="center"
-        android:text="1房" />
+    android:orientation="horizontal">
 
+    <LinearLayout
+        android:layout_width="60dp"
+        android:layout_height="80dp"
+        android:background="@drawable/bednumber_icon"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/sickbed_wardnumber"
+            android:layout_width="0dp"
+            android:layout_height="80dp"
+            android:layout_weight="1"
+            android:gravity="right|center_vertical"
+            android:text="1"
+            android:textColor="@color/colorwrite"
+            android:textSize="20sp" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="80dp"
+            android:layout_weight="1"
+            android:gravity="left|center_vertical"
+            android:text="房"
+            android:textColor="@color/colorwrite"
+            android:textSize="12sp" />
+
+    </LinearLayout>
 </LinearLayout>

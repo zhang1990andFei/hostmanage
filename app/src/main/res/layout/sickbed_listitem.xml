@@ -8,14 +8,17 @@
         android:id="@+id/sickbed_bednumber"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:gravity="top"
         android:layout_marginBottom="10dp"
+        android:padding="10dp"
+        android:background="@drawable/bedcard_icon"
+        android:textColor="@color/colorwrite"
+        android:gravity="top|center_horizontal"
         android:text="1床" />
 
     <TextView
         android:id="@+id/sickbed_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:text="任平生" />
 </LinearLayout>

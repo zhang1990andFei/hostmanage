@@ -18,11 +18,10 @@
         <TextView
 
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
-            android:layout_marginTop="10dp"
-            android:drawableTop="@mipmap/ic_launcher"
+            android:drawableTop="@drawable/extrabed_icon"
             android:gravity="center"
             android:text="加床"
             android:textColor="#000000"
@@ -40,11 +39,11 @@
         <TextView
 
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
-            android:layout_marginTop="10dp"
-            android:drawableTop="@mipmap/ic_launcher"
+
+            android:drawableTop="@drawable/contacts_icon"
             android:gravity="center"
             android:text="通讯录"
             android:textColor="#000000"
@@ -62,11 +61,11 @@
         <TextView
 
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
-            android:layout_marginTop="10dp"
-            android:drawableTop="@mipmap/ic_launcher"
+
+            android:drawableTop="@drawable/checknotice_icon"
             android:gravity="center"
             android:text="检查提醒"
             android:textColor="#000000"
@@ -76,7 +75,7 @@
     <LinearLayout
         android:id="@+id/notice_button"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_weight="1"
         android:gravity="center"
         android:orientation="horizontal">
@@ -87,8 +86,8 @@
             android:layout_height="match_parent"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
-            android:layout_marginTop="10dp"
-            android:drawableTop="@mipmap/ic_launcher"
+
+            android:drawableTop="@drawable/notice_icon"
             android:gravity="center"
             android:text="重要通知"
             android:textColor="#000000"
@@ -106,11 +105,11 @@
         <TextView
 
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
-            android:layout_marginTop="10dp"
-            android:drawableTop="@mipmap/ic_launcher"
+
+            android:drawableTop="@drawable/broadcast_icon"
             android:gravity="center"
             android:text="房内广播"
             android:textColor="#000000"
@@ -128,11 +127,11 @@
         <TextView
 
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
-            android:layout_marginTop="10dp"
-            android:drawableTop="@mipmap/ic_launcher"
+
+            android:drawableTop="@drawable/changebed_icon"
             android:gravity="center"
             android:text="换床"
             android:textColor="#000000"
@@ -152,11 +151,10 @@
         <TextView
 
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
-            android:layout_marginTop="10dp"
-            android:drawableTop="@mipmap/ic_launcher"
+            android:drawableTop="@drawable/restart_icon"
             android:gravity="center"
             android:text="重启"
             android:textColor="#000000"

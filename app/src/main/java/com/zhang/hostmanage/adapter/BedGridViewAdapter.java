@@ -65,7 +65,7 @@ public class BedGridViewAdapter extends BaseAdapter {
         list = new ArrayList<Map<String, Object>>();
         Map<String, Object> map = null;
         map = new HashMap<String, Object>();
-        map.put("text", 1 + "房");
+        map.put("text", 1 +"");
         map.put("textname", "夔禺疆");
         //   map.put("Type",1);
         map.put("Type", Constants.NUMFIRST);

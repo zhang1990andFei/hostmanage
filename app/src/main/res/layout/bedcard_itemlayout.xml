@@ -11,8 +11,8 @@
         android:layout_height="180dp"
         android:fadingEdge="none"
         android:horizontalSpacing="10dp"
+        android:listSelector="@null"
         android:numColumns="4"
-        android:padding="5dp"
         android:scrollbars="none"
         android:verticalSpacing="20dp"></GridView>
 

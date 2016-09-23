@@ -71,7 +71,9 @@ public class MyGridViewAdapter extends BaseAdapter {
 
                 case Constants.NUMFIRST:
                     convertView = inflater.inflate(R.layout.sickbed_item, null);
-                    viewHolder.tv = (TextView) convertView.findViewById(R.id.sickbed_wardnumber);
+                  //  viewHolder.tv = (TextView) convertView.findViewById(R.id.sickbed_wardnumber);
+                    viewHolder.sickbeditem_name = (TextView) convertView.findViewById(R.id.sickbed_wardnumber);
+                    viewHolder.sickbeditem_name.setText(map.get("text").toString());
                     //      viewHolder.sickbeditem_name = (TextView) convertView.findViewById(R.id.sickbed_name);
                     break;
                 case Constants.NUMSECONd:
@@ -79,6 +81,7 @@ public class MyGridViewAdapter extends BaseAdapter {
                     viewHolder.tv = (TextView) convertView.findViewById(R.id.sickbed_bednumber);
                     viewHolder.sickbeditem_name = (TextView) convertView.findViewById(R.id.sickbed_name);
                     viewHolder.sickbeditem_name.setText(map.get("textname").toString());
+                    viewHolder.tv.setText(map.get("text").toString());
                     break;
 
             }
@@ -87,7 +90,7 @@ public class MyGridViewAdapter extends BaseAdapter {
             viewHolder = (viewHolder) convertView.getTag();
         }
 
-        viewHolder.tv.setText(map.get("text").toString());
+
 
 
         return convertView;

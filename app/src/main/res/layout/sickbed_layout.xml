@@ -20,12 +20,12 @@
         android:id="@+id/sickbed_grid"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:fadingEdge="none"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
-        android:fadingEdge="none"
         android:horizontalSpacing="10dp"
+        android:listSelector="@null"
         android:numColumns="4"
-        android:padding="5dp"
         android:scrollbars="none"
         android:verticalSpacing="10dp"></GridView>
 

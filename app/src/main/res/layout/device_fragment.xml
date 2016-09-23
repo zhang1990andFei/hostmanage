@@ -20,7 +20,7 @@
         android:layout_width="match_parent"
         android:layout_height="80dp"
         android:layout_gravity="center"
-        android:layout_marginLeft="40dp"
+        android:layout_marginLeft="20dp"
         android:layout_marginRight="40dp"
         android:background="@drawable/coner_blue"
         android:orientation="horizontal">
@@ -66,7 +66,7 @@
         android:layout_width="match_parent"
         android:layout_height="380dp"
         android:layout_gravity="center"
-        android:layout_marginLeft="40dp"
+        android:layout_marginLeft="20dp"
         android:layout_marginRight="40dp"
         android:background="@color/colorwrite"
         android:orientation="horizontal">
@@ -76,6 +76,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:horizontalSpacing="30dp"
+            android:listSelector="@null"
             android:numColumns="10"
             android:stretchMode="columnWidth"
             android:verticalSpacing="20dp"></GridView>
@@ -85,16 +86,16 @@
         android:layout_width="match_parent"
         android:layout_height="80dp"
         android:layout_gravity="center"
-        android:layout_marginLeft="40dp"
+        android:layout_marginLeft="20dp"
         android:layout_marginRight="40dp"
         android:layout_marginTop="20dp"
-        android:background="@drawable/coner_blue"
+        android:background="@drawable/coner_lightblue"
         android:orientation="horizontal">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_marginLeft="30dp"
+            android:layout_marginLeft="10dp"
             android:gravity="center_vertical"
             android:text="病房"
             android:textColor="@color/colorwrite"
@@ -131,9 +132,9 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="120dp"
+        android:layout_height="180dp"
         android:layout_gravity="center"
-        android:layout_marginLeft="40dp"
+        android:layout_marginLeft="20dp"
         android:layout_marginRight="40dp"
         android:background="@color/colorwrite"
         android:orientation="horizontal">
@@ -143,6 +144,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:horizontalSpacing="30dp"
+            android:listSelector="@null"
             android:numColumns="6"
             android:stretchMode="columnWidth"
             android:verticalSpacing="20dp"></GridView>

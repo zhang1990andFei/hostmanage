@@ -30,6 +30,7 @@
             android:horizontalSpacing="30dp"
             android:numColumns="5"
             android:stretchMode="columnWidth"
+            android:listSelector="@android:color/transparent"
             android:verticalSpacing="20dp"></GridView>
 
         <RelativeLayout
