@@ -27,11 +27,11 @@ import com.zhang.hostmanage.fragmet.DoctorFragment;
 import com.zhang.hostmanage.fragmet.NurseFragment;
 import com.zhang.hostmanage.fragmet.SickBedFragment;
 import com.zhang.hostmanage.fragmet.WardFragment;
-import com.zhang.hostmanage.view.DateView;
 
-import org.w3c.dom.Text;
+
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 
 public class MainActivity extends Activity implements View.OnClickListener {
 
@@ -40,7 +40,6 @@ public class MainActivity extends Activity implements View.OnClickListener {
     private RadioButton radio_doctor;
     private RadioButton radio_nurse;
     private RadioButton radio_device;
-
     private WardFragment wardFragment;
     private SickBedFragment sickBedFragment;
     private DoctorFragment doctorFragment;

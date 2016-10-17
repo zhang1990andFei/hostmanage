@@ -15,4 +15,8 @@
     <color name="color_bg_normal">#e7e7e8</color>
     <color name="color_bottomblue">#89B0FF</color>
     <color name="color_textgray">#8D8D8D</color>
+    <color name="dropdownlist_press">#e7e7e7</color>
+    <color name="dropdownlist_bg">#aaaaaa</color>
+    <color name="dropdownlist_item_press">#ffffff</color>
+    <color name="dropdownlist_item_bg">#e7e7e7</color>
 </resources>

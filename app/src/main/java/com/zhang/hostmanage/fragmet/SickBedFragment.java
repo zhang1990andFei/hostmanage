@@ -1,6 +1,7 @@
 package com.zhang.hostmanage.fragmet;
 
 import android.app.Fragment;
+import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
@@ -17,6 +18,10 @@ import android.view.animation.TranslateAnimation;
 import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.GridView;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.ListView;
+import android.widget.PopupWindow;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -24,6 +29,7 @@ import com.zhang.hostmanage.R;
 import com.zhang.hostmanage.adapter.BedGridViewAdapter;
 import com.zhang.hostmanage.adapter.MyAdapter;
 import com.zhang.hostmanage.adapter.MyGridViewAdapter;
+import com.zhang.hostmanage.adapter.MySpinnerAdapter;
 import com.zhang.hostmanage.utils.Constants;
 
 import java.util.ArrayList;
@@ -37,6 +43,7 @@ import java.util.Map;
  * 描述：
  */
 public class SickBedFragment extends Fragment {
+
     private GridView gridView;
     private MyGridViewAdapter adapter;
     private BedGridViewAdapter bedGridViewAdapter;
@@ -44,9 +51,11 @@ public class SickBedFragment extends Fragment {
     private List<String> mDatas = new ArrayList<String>(Arrays.asList("素还真",
             "倦收天", "温皇", "任飘渺", "黑白郎君", "100", "123"));
 
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.sickbed_layout, container, false);
+
 
         gridView = (GridView) view.findViewById(R.id.sickbed_grid);
 
@@ -102,6 +111,7 @@ public class SickBedFragment extends Fragment {
         gridView.setAdapter(bedGridViewAdapter);
         return view;
     }
+
 
 
 }
