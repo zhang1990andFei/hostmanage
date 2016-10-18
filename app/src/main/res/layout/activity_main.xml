@@ -14,16 +14,16 @@
         android:orientation="horizontal">
 
         <TextView
-        android:id="@+id/main_date"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:layout_gravity="left"
-        android:layout_marginLeft="20dp"
-        android:gravity="center"
-        android:padding="10dp"
-        android:text="2016年8月31日"
-        android:textColor="#000000"
-        android:textSize="28sp" />
+            android:id="@+id/main_date"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="left"
+            android:layout_marginLeft="20dp"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="2016年8月31日"
+            android:textColor="#000000"
+            android:textSize="28sp" />
 
         <!--<TextView-->
         <!--android:id="@+id/main_time"-->
@@ -35,12 +35,12 @@
         <!--android:textColor="#000000"-->
         <!--android:textSize="28sp" />-->
         <!--<com.zhang.hostmanage.view.DateView-->
-            <!--android:id="@+id/show_date"-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="match_parent"-->
-            <!--android:layout_gravity="center"-->
-            <!--android:layout_marginLeft="20dp"-->
-            <!--android:padding="10dp"></com.zhang.hostmanage.view.DateView>-->
+        <!--android:id="@+id/show_date"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:layout_gravity="center"-->
+        <!--android:layout_marginLeft="20dp"-->
+        <!--android:padding="10dp"></com.zhang.hostmanage.view.DateView>-->
 
         <View
             android:layout_width="0dp"
@@ -62,7 +62,7 @@
                 android:button="@null"
                 android:checked="true"
                 android:gravity="center"
-                android:text="病房"
+                android:text="患者"
                 android:textColor="@drawable/selector_button"
                 android:textSize="24sp" />
 

@@ -3,6 +3,7 @@ package com.zhang.hostmanage.fragmet;
 
 import android.animation.ValueAnimator;
 import android.app.Fragment;
+import android.graphics.Color;
 import android.graphics.Point;
 import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
@@ -63,6 +64,7 @@ public class WardFragment extends Fragment implements AdapterView.OnItemClickLis
     private PopupWindow popupWindow;
     private LinearLayout spinnerlayout;
     int width;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.wardfragment_view, container, false);
@@ -78,7 +80,6 @@ public class WardFragment extends Fragment implements AdapterView.OnItemClickLis
         back.setOnClickListener(this);
         hide = (ImageView) view.findViewById(R.id.hide_all);
         hide.setOnClickListener(this);
-
         spinner_list = new ArrayList<String>();
         spinner_list.add("第一展厅");
         spinner_list.add("4展厅");
@@ -266,9 +267,10 @@ public class WardFragment extends Fragment implements AdapterView.OnItemClickLis
         }
 
     }
-/*
-展示
- */
+
+    /*
+    展示
+     */
     public void showWindow(View position, final TextView txt) {
 
         View view = LayoutInflater.from(getActivity()).inflate(R.layout.myspinner_dropdown, null);
@@ -280,13 +282,13 @@ public class WardFragment extends Fragment implements AdapterView.OnItemClickLis
         popupWindow.setWidth(spinnerlayout.getWidth());
         popupWindow.setHeight(LinearLayout.LayoutParams.WRAP_CONTENT);
         // 设置一个透明的背景，不然无法实现点击弹框外，弹框消失
-        popupWindow.setBackgroundDrawable(new BitmapDrawable());
+        // popupWindow.setBackgroundDrawable(new BitmapDrawable());
         // 设置点击弹框外部，弹框消失
         popupWindow.setOutsideTouchable(true);
         popupWindow.setFocusable(true);
         popupWindow.setContentView(view);
         // 设置弹框出现的位置，在v的正下方横轴偏移textview的宽度，为了对齐~纵轴不偏移
-        popupWindow.showAsDropDown(position,0,0);
+        popupWindow.showAsDropDown(position, 0, 0);
         popupWindow.setOnDismissListener(new PopupWindow.OnDismissListener() {
             @Override
             public void onDismiss() {

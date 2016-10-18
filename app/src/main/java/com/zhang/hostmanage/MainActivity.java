@@ -25,6 +25,7 @@ import android.widget.Toast;
 import com.zhang.hostmanage.fragmet.DeviceFragment;
 import com.zhang.hostmanage.fragmet.DoctorFragment;
 import com.zhang.hostmanage.fragmet.NurseFragment;
+import com.zhang.hostmanage.fragmet.PatientFragment;
 import com.zhang.hostmanage.fragmet.SickBedFragment;
 import com.zhang.hostmanage.fragmet.WardFragment;
 
@@ -45,6 +46,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
     private DoctorFragment doctorFragment;
     private NurseFragment nurseFragment;
     private DeviceFragment deviceFragment;
+    private PatientFragment patientFragment;
 
     private FrameLayout frameLayout;
     private LinearLayout bottom_layout;
@@ -132,7 +134,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
     private void initData() {
         FragmentTransaction ft;
         ft = getFragmentManager().beginTransaction();
-        ft.replace(R.id.fragment_container, new WardFragment());
+        ft.replace(R.id.fragment_container, new PatientFragment());
         ft.commit();
     }
 
@@ -143,7 +145,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
         final LayoutInflater inflater = LayoutInflater.from(this);
         switch (v.getId()) {
             case R.id.radio_ward:
-                t.replace(R.id.fragment_container, new WardFragment());
+                t.replace(R.id.fragment_container, new PatientFragment());
                 initButton(6);
                 t.commit();
                 break;
