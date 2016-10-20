@@ -63,6 +63,15 @@ public class PatientFragment extends Fragment implements AdapterView.OnItemClick
         mGridView = (GridView) view.findViewById(R.id.wardview_gridview);
         mGridView.setAdapter(mAdapter = new PatientAdapter(getActivity(), mDatas));
         mGridView.setOnItemClickListener(this);
+        warddetail_layout = (RelativeLayout) view.findViewById(R.id.warddetail_rlayout);
+        detailshow_layout = (RelativeLayout) view.findViewById(R.id.detailshow_rlayout);
+        showdetail_button = (TextView) view.findViewById(R.id.detail_show);
+        showdetail_button.setOnClickListener(this);
+        animation_text = (TextView) view.findViewById(R.id.animation_text);
+        back = (ImageView) view.findViewById(R.id.back_bedcard);
+        back.setOnClickListener(this);
+        hide = (ImageView) view.findViewById(R.id.hide_all);
+        hide.setOnClickListener(this);
         spinner_list = new ArrayList<String>();
         spinner_list.add("第一展厅");
         spinner_list.add("4展厅");
@@ -92,13 +101,85 @@ public class PatientFragment extends Fragment implements AdapterView.OnItemClick
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
-
+            case R.id.detail_show:
+                float curTranslationX_detail = warddetail_layout.getTranslationX();
+                ObjectAnimator animator_detail = ObjectAnimator.ofFloat(warddetail_layout, "translationX", curTranslationX_detail, -850f);
+                ObjectAnimator animator_griddetial = ObjectAnimator.ofFloat(mGridView, "translationX", curTranslationX_detail, -850f);
+                ObjectAnimator animator_patient = ObjectAnimator.ofFloat(detailshow_layout, "translationX", curTranslationX_detail, -850f);
+                animator_detail.setDuration(500);
+                animator_griddetial.setDuration(500);
+                animator_patient.setDuration(500);
+                AnimatorSet animSet_detail = new AnimatorSet();
+                animSet_detail.setDuration(500);
+                animSet_detail.setInterpolator(new LinearInterpolator());
+                //两个动画同时执行
+                animSet_detail.playTogether(animator_detail, animator_griddetial, animator_patient);
+                // animSet.play();
+                animSet_detail.start();
+                showdetail_button.setVisibility(View.GONE);
+                back.setVisibility(View.INVISIBLE);
+                back.setClickable(false);
+                break;
+            case R.id.back_bedcard:
+                float curTranslationX = warddetail_layout.getTranslationX();
+                ObjectAnimator animator = ObjectAnimator.ofFloat(warddetail_layout, "translationX", curTranslationX, 0f);
+                ObjectAnimator animator_grid = ObjectAnimator.ofFloat(mGridView, "translationX", curTranslationX, 0f);
+                animator.setDuration(500);
+                animator_grid.setDuration(500);
+                AnimatorSet animSet = new AnimatorSet();
+                animSet.setDuration(500);
+                animSet.setInterpolator(new LinearInterpolator());
+                //两个动画同时执行
+                animSet.playTogether(animator, animator_grid);
+                // animSet.play();
+                animSet.start();
+                right_show = false;
+                break;
+            case R.id.hide_all:
+                float curTranslationXhide = warddetail_layout.getTranslationX();
+                animator_detail = ObjectAnimator.ofFloat(warddetail_layout, "translationX", curTranslationXhide, 0f);
+                animator_griddetial = ObjectAnimator.ofFloat(mGridView, "translationX", curTranslationXhide, 0f);
+                animator_patient = ObjectAnimator.ofFloat(detailshow_layout, "translationX", curTranslationXhide, 0f);
+                animator_detail.setDuration(500);
+                animator_griddetial.setDuration(500);
+                animator_patient.setDuration(500);
+                AnimatorSet animSet_detailhide = new AnimatorSet();
+                animSet_detailhide.setDuration(500);
+                animSet_detailhide.setInterpolator(new LinearInterpolator());
+                //两个动画同时执行
+                animSet_detailhide.playTogether(animator_detail, animator_griddetial, animator_patient);
+                // animSet.play();
+                animSet_detailhide.start();
+                showdetail_button.setVisibility(View.VISIBLE);
+                back.setVisibility(View.VISIBLE);
+                back.setClickable(true);
+                right_show = false;
+                break;
         }
 
     }
 
     @Override
     public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+        if (right_show) {
+
+        } else {
+            float curTranslationX = warddetail_layout.getTranslationX();
+            ObjectAnimator animator = ObjectAnimator.ofFloat(warddetail_layout, "translationX", curTranslationX, -550f);
+            ObjectAnimator animator_grid = ObjectAnimator.ofFloat(mGridView, "translationX", curTranslationX, -550f);
+            animator.setDuration(500);
+            animator_grid.setDuration(500);
+            AnimatorSet animSet = new AnimatorSet();
+            animSet.setDuration(500);
+            animSet.setInterpolator(new LinearInterpolator());
+            //两个动画同时执行
+            animSet.playTogether(animator, animator_grid);
+            // animSet.play();
+            animSet.start();
+            // animator.start();
+            //   anim.start();
+            right_show = true;
+        }
 
     }
 

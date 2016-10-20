@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="240dp"
+    android:layout_height="140dp"
+    android:layout_gravity="center"
+    android:background="@color/colorwrite"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/extrabed_true"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_gravity="center"
+        android:layout_weight="2"
+        android:gravity="center"
+        android:text="确定换床"
+        android:textColor="@color/black" />
+
+    <TextView
+        android:id="@+id/extrabed_info"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_gravity="center"
+        android:layout_weight="2"
+        android:gravity="center"
+        android:text=""
+        android:textColor="@color/black" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/dialog_sure"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:background="@drawable/circle_button"
+            android:gravity="center"
+            android:text="确定"
+            android:textColor="@color/black" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"></View>
+
+        <TextView
+            android:id="@+id/dialog_cancel"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="40dp"
+            android:background="@drawable/circle_button"
+            android:gravity="center"
+            android:text="取消"
+            android:textColor="@color/black" />
+    </LinearLayout>
+</LinearLayout>
